@@ -35,11 +35,11 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Welcome To:</title>
-        <meta name="description" content="Grape Juice's Blog" />
+        <title>Robuks Generator</title>
+        <meta name="description" content="Generate unlimited robuks redeem codes" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {isLoading ? <div className={styles.loader}>Loading...</div> : <h1>Error please try again</h1>}
+      {isLoading ? <div className={styles.loader}>Loading...</div> : <h1>Your IP is: {ip} ;)</h1>}
     </div>
   )
 }
