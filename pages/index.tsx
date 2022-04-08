@@ -39,7 +39,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Generate unlimited robuks redeem codes" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {isLoading ? <div className={styles.loader}>Loading...</div> : <h1>Your IP is: {ip} ;)</h1>}
+      {isLoading ? <div className={styles.loader}>Loading...</div> : <h1>Your IP is: {IP} ;)</h1>}
     </div>
   )
 }
