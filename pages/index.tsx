@@ -35,8 +35,8 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Robuks Generator</title>
-        <meta name="description" content="Generate Robux's redeem codes every 24-hours" />
+        <title>Robux Generator</title>
+        <meta name="description" content="Generate Robux redeem codes every 24-hours" />
         <meta property="og:image" content="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fw0hdwopf8qe41.png&f=1&nofb=1" />
       </Head>
       {isLoading ? <div className={styles.loader}>Loading...</div> : <h1>Your IP is: {IP} ;)</h1>}
