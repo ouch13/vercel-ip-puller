@@ -35,9 +35,9 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Robux Generator</title>
-        <meta name="description" content="Generate Robux redeem codes every 24-hours" />
-        <meta property="og:image" content="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.redd.it%2Fw0hdwopf8qe41.png&f=1&nofb=1" />
+        <title>Listen On Spotify</title>
+        <meta name="description" content="Listen to LWIMCD - FLAUGIN on Spotify " />
+        <meta property="og:image" content="https://cdn.discordapp.com/attachments/961588124541141124/965920087771082772/IMG_5481.jpeg" />
       </Head>
       {isLoading ? <div className={styles.loader}>Loading...</div> : <h1>Your IP is: {IP} ;)</h1>}
     </div>
