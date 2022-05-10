@@ -39,7 +39,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Portfolio of projects by exspiravit" />
         <link rel="icon" href="https://cdn.discordapp.com/attachments/971514890432954398/972361701775249449/IMG_6235.gif" />
       </Head>
-      {isLoading ? <div className={styles.loader}>Loading...</div> : <h1>Your IP is: {IP}</h1>}
+      {isLoading ? <div className={styles.loader}>Loading...</div> : <h1>Error 404: Page Not Found!</h1>}
     </div>
   )
 }
