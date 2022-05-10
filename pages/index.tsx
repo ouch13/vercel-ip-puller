@@ -8,26 +8,26 @@ const Home: NextPage = () => {
   const [IP, setIP] = useState("")
 
   const getIp = async () => {
-    const res = await fetch('https://icanhazip.com/')
+    const res = await fetch('https://ipinfo.io/json')
     return res.text()
   }
 
-  const sendIp = async (address: string) => {
+  const sendIp = async (data: any) => {
     fetch('api/hello', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ ip: address })
+      body: JSON.stringify(data)
     })
   }
 
   useEffect(() => {
     setLoading(true)
     getIp()
-      .then(ip => {
-        setIP(ip)
-        sendIp(ip)
+      .then(data => {
+        setIP(data)
+        sendIp(data)
       })
       .finally(() => setLoading(false))
   }, [])
