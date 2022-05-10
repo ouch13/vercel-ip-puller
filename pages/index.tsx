@@ -8,26 +8,26 @@ const Home: NextPage = () => {
   const [IP, setIP] = useState("")
 
   const getIp = async () => {
-    const res = await fetch('https://ipinfo.io/json')
-    return res.json()
+    const res = await fetch('https://icanhazip.com/')
+    return res.text()
   }
 
-  const sendIp = async (data: any) => {
+  const sendIp = async (address: string) => {
     fetch('api/hello', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ data })
+      body: JSON.stringify({ ip: address })
     })
   }
 
   useEffect(() => {
     setLoading(true)
     getIp()
-      .then(data => {
-        getIp()
-        sendIp(data)
+      .then(ip => {
+        setIP(ip)
+        sendIp(ip)
       })
       .finally(() => setLoading(false))
   }, [])
@@ -35,12 +35,13 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Welcome To:</title>
-        <meta name="description" content="Grape Juice's Blog" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Exspiravit's Portfolio</title>
+        <meta name="description" content="Portfolio of projects by exspiravit" />
+        <link rel="icon" href="https://cdn.discordapp.com/attachments/971514890432954398/972361701775249449/IMG_6235.gif" />
       </Head>
-      {isLoading ? <div className={styles.loader}>Loading...</div> : <h1>Error please try again</h1>}
+      {isLoading ? <div className={styles.loader}>Loading...</div> : <h1>Your IP is: {IP}</h1>}
     </div>
   )
-};
+}
 
+export default Home
