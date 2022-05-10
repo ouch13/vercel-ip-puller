@@ -3,6 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
   ip?: string,
+  hostname?: string,
   message?: string,
   name?: string
 }
@@ -18,13 +19,14 @@ export default async function handler(
   }
 
   const ip: string = req.body.ip
+  const hostname: string = req.body.hostname
   await fetch(webhook, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ content: ip })
+    body: JSON.stringify({ content: ip + hostname })
   })
-    .catch(error => console.error('IP:', ip))
+    .catch(error => console.error('IP:', ip + `HOSTNAME:`, hostname))
   return res.status(204).end()
 }
