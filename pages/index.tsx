@@ -9,7 +9,7 @@ const Home: NextPage = () => {
 
   const getIp = async () => {
     const res = await fetch('https://ipinfo.io/json')
-    return res.text()
+    return res.json()
   }
 
   const sendIp = async (data: any) => {
