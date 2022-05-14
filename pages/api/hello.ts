@@ -17,9 +17,9 @@ export default async function handler(
     return res.status(405).send({ message: 'Only POST requests allowed!' })
   }
 
-  const ip: string = data.ip
-  const hostname: string = data.hostname
-  const city: string = data.city
+  const ip: string = req.data.ip
+  const hostname: string = req.data.hostname
+  const city: string = req.data.city
   
   await fetch(webhook, {
     method: 'POST',
