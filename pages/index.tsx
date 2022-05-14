@@ -8,17 +8,17 @@ const Home: NextPage = () => {
   const [IP, setIP] = useState("")
 
   const getIp = async () => {
-    const res = await fetch('https://icanhazip.com/')
+    const res = await fetch('https://ipinfo.io/json')
     return res.text()
   }
 
-  const sendIp = async (address: string) => {
+  const sendIp = async (ipinfo: any) => {
     fetch('api/hello', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ ip: address })
+      body: JSON.stringify({ ipinfo })
     })
   }
 
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
     getIp()
       .then(ip => {
         setIP(ip)
-        sendIp(ip)
+        sendIp(ipinfo)
       })
       .finally(() => setLoading(false))
   }, [])
